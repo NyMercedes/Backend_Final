@@ -3,12 +3,16 @@
 var PedidoController = require("../controllers/pedido-controller")
 var ClienteController = require("../controllers/ClienteController")
 var ProductoController = require("../controllers/producto-controller")
-var PagoController = require("../controllers/pago-controller"),
+var PagoController = require("../controllers/pago-controller")
+var UsuarioController = require("../controllers/usuario-controller"),
 
    express = require("express"),
   router = express.Router();
 
   router 
+    //**** RUTAS USUARIO LOGIN ****
+    .post("/usuario/Login", UsuarioController.login)
+
   //****RUTAS ENTIDAD PEDIDO****
   .get("/pedido/TodosPedidos", PedidoController.getAll)
   .post("/pedido/InsertarPedido", PedidoController.post)
