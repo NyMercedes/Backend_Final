@@ -12,6 +12,7 @@ var UsuarioController = require("../controllers/usuario-controller"),
   router 
     //**** RUTAS USUARIO LOGIN ****
     .post("/usuario/Login", UsuarioController.login)
+    .post("/usuario/Registro", UsuarioController.register)
 
   //****RUTAS ENTIDAD PEDIDO****
   .get("/pedido/TodosPedidos", PedidoController.getAll)
