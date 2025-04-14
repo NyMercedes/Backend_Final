@@ -58,5 +58,14 @@ UsuarioModel.register = (data, cb) => {
   });
 };
 
+UsuarioModel.getAllUsers = (cb) => {
+  const sql = `SELECT * FROM EntidadUsuario ORDER BY codigo_usuario ASC`;
+
+  conn.query(sql, (err, result) => {
+    if (err) return cb(err, null);
+    cb(null, result.rows);
+  });
+};
+
 
 module.exports = UsuarioModel;
