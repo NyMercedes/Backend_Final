@@ -49,6 +49,21 @@ var UsuarioController = {
 
       res.json(result);
     });
+  },
+
+  getAllUsers: (req, res) => {
+    UsuarioModel.getAllUsers((err, users) => {
+      if (err) {
+        return res.status(500).json({ success: false, message: "Error al obtener usuarios", error: err });
+      }
+  
+      const usuariosSinPassword = users.map(user => {
+        const { password, ...rest } = user;
+        return rest;
+      });
+  
+      res.json({ success: true, usuarios: usuariosSinPassword });
+    });
   }
 
 };
