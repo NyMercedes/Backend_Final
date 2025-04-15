@@ -1,6 +1,6 @@
-var UsuarioModel = require("../models/usuario-model");
+const UsuarioModel = require("../models/usuario-model");
 
-var UsuarioController = {
+const UsuarioController = {
   login: (req, res) => {
     const { nombre_usuario, password } = req.body;
 
@@ -65,7 +65,7 @@ var UsuarioController = {
       res.json({ success: true, usuarios: usuariosSinPassword });
     });
   }
-
+  
 };
 
 module.exports = UsuarioController;

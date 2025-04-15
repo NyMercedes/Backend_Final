@@ -1,4 +1,4 @@
-var conn = require("../config/db-connection");
+const conn = require("../config/db-connection");
 
 const UsuarioModel = () => {};
 
@@ -66,6 +66,5 @@ UsuarioModel.getAllUsers = (cb) => {
     cb(null, result.rows);
   });
 };
-
 
 module.exports = UsuarioModel;
